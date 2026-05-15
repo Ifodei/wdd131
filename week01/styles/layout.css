@@ -1,0 +1,66 @@
+/* Zero out default margins and set font families */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Master content container block limits layout size stretch */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* Header Content styling */
+header {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+/* Navigation Menu layouts */
+nav {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Main vs Aside Grid split mechanics */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    min-height: 400px; /* Forces vertical height like layout image */
+}
+
+/* Main body content styling */
+main {
+    background-color: #cccccc;
+    color: #333333;
+    padding: 20px;
+}
+
+/* Aside body content styling */
+aside {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px;
+}
+
+/* Footer layout elements */
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+}
