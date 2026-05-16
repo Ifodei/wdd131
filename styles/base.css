@@ -1,0 +1,179 @@
+/* ==========================================================================
+   1. BASE STYLES & RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION (Flexbox Requirements)
+   ========================================================================== */
+header {
+    background-color: #052648; /* Dark assignment blue */
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Requirement 1: Make span tag display as a block to center text easily */
+#course-title {
+    display: block; 
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Requirement 2: Use CSS Flex on the navigation nav */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #111111;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Requirement 3: Navigation well-designed hover effect */
+nav a:hover {
+    background-color: #2b2b2b;
+    color: #4ed9ff; /* Smooth bright blue highlight glow */
+}
+
+/* ==========================================================================
+   3. MAIN CONTENT AREA (Grid & Layout Requirements)
+   ========================================================================== */
+/* Requirement 4: Limited width and centered horizontally */
+main {
+    max-width: 1040px;
+    margin: 30px auto;
+    padding: 0 20px;
+    
+    /* Requirement 5: Layout the main column cards using CSS Grid */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Left column is twice as wide as right column */
+    gap: 25px; 
+    align-items: start;
+}
+
+/* Fixes the layout breakage: Tells the H1 heading to span across BOTH grid columns */
+main h1 {
+    grid-column: 1 / -1; 
+    text-align: center;
+    color: #111;
+    font-size: 2.4rem;
+    margin: 10px 0 15px 0;
+}
+
+/* ==========================================================================
+   4. CARD COMPONENTS DESIGN
+   ========================================================================== */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+/* Blue header strip inside cards */
+.card h2 {
+    background-color: #1b4d7c; 
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    padding: 14px 20px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Text spacing inside cards */
+.card p {
+    padding: 0 20px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+/* Floating images beautifully to the right side of card text */
+.card img {
+    float: right;
+    width: 160px;
+    height: auto;
+    margin: 0 0 15px 20px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Keeps card layout container safe from float overflows */
+.card::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==========================================================================
+   5. FOOTER STYLING & JAVASCRIPT OUTPUTS
+   ========================================================================== */
+footer {
+    background-color: #1b4d7c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 65px;
+    border-top: 4px solid #052648;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+/* Making your dynamic JS modified text pop out neatly */
+#lastModified {
+    color: #ffee55; /* Contrast yellow tone */
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERY (Mobile Breakpoint)
+   ========================================================================== */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Switch to 1 column row on mobile viewports */
+        gap: 20px;
+    }
+    
+    nav {
+        flex-direction: column; /* Stack navbar vertical on smaller phone screen sizes */
+    }
+    
+    nav a {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #222;
+    }
+    
+    .card img {
+        float: none;
+        display: block;
+        margin: 0 auto 15px auto; /* Centers images cleanly on mobile layout views */
+    }
+}
