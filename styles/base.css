@@ -6,10 +6,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Changes font to the loaded Google Font */
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
+    background-color: #f5f5f5;
     color: #333;
 }
 
